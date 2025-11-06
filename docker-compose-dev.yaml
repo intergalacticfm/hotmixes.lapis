@@ -4,6 +4,7 @@ services:
     networks:
       - web
     volumes:
+      - ./code:/srv/lapis
       - /data:/mnt/data:ro
     labels:
       - traefik.enable=true
