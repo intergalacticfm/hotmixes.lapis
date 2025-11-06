@@ -16,7 +16,7 @@
     <br>
 
 <% for i, file in ipairs(files) do %>
-    <a class="amixlink" href="<%= path .. file %>">
+    <a class="amixlink" href="<%= path .. file:gsub("#", "%%23") %>">
         <span class="mixlink"><%= file %></span>
     </a>
     <br>

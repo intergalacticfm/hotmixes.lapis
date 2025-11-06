@@ -85,7 +85,6 @@ utils['these_latest'] = function( path )
     local latest_path, latest_name = {}, {}
 
     for i, file_path in ipairs( utils.latest_files( path ) ) do
-        file_path = file_path:gsub( path, "/" )
         table.insert( latest_path, file_path)
 
         local temp = ""

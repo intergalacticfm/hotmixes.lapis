@@ -23,7 +23,7 @@
                 <br>
                 <h1 class="h1">Latest uploads:</h1>
             <% for i, file in ipairs(latestpath) do %>
-                <a class="amixlink" href="<%= '/data/' .. titles.url .. '/' .. file %>">
+                <a class="amixlink" href="<%= '/data/' .. titles.url .. '/' .. file:gsub("#", "%%23") %>">
                     <span class="mixlink"><%= latestname[i] %></span>
                 </a>
                 </br>
