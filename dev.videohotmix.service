@@ -1,0 +1,18 @@
+[Unit]
+Description=Videohotmix DEV service with docker compose
+Requires=docker.service
+After=docker.service
+
+[Service]
+User=robot
+Restart=always
+WorkingDirectory=/home/robot/Sources/hotmixes.lapis
+
+# Compose up
+ExecStart=/usr/bin/docker compose -f docker-compose-dev.yaml up --build
+
+# Compose down, remove containers
+ExecStop=/usr/bin/docker compose -f docker-compose-dev.yaml down
+
+[Install]
+WantedBy=multi-user.target
