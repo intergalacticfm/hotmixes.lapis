@@ -41,7 +41,7 @@ utils['match_image'] = function( file )
     end
 end
 
-utils['latest_files'] = function(directory)
+utils['latest_files'] = function( directory )
     local i, t, popen = 0, {}, io.popen
     local pfile = popen('find "'..directory..'" -type f ! -name \'*.filepart\' -printf \'%C@ %p\n\'| sort -nr | head -7 | cut -f2- -d" "| sed s:"'..directory..'/"::')
     for filename in pfile:lines() do
@@ -80,16 +80,13 @@ utils['these_files'] = function( path )
     return stuff
 end
 
-utils['these_latest'] = function()
+utils['these_latest'] = function( path )
     -- list last 10 modified files in our directory
     local latest_path, latest_name = {}, {}
 
-    for i, file_path in ipairs( utils.latest_files( data_dir ) ) do
-        file_path = file_path:gsub( data_dir, "/" )
+    for i, file_path in ipairs( utils.latest_files( path ) ) do
+        file_path = file_path:gsub( path, "/" )
         table.insert( latest_path, file_path)
-
-        -- local to_json = require("lapis.util").to_json
-        -- print( to_json(latest_path) )
 
         local temp = ""
         local result = ""

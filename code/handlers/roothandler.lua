@@ -1,19 +1,17 @@
 local to_json = require("lapis.util").to_json
 local autoload = require("lapis.util").autoload
 local config = require("lapis.config")
-
--- print(to_json(config.get()))
-
 local hotmixes = autoload("hotmixes")
 
 local function Roothandler(self)
-    local stuff = hotmixes.utils.these_files( hotmixes.utils.data_path )
 
-    local latest_path, latest_name = hotmixes.utils.these_latest()
+    local path = config.get().mount .. self.titles.url
+    local stuff = hotmixes.utils.these_files( path .. hotmixes.utils.request_path )
+    local latest_path, latest_name = hotmixes.utils.these_latest( path )
 
-    self.total = hotmixes.utils.total_files_dir( config.get().mount )
+    self.total = hotmixes.utils.total_files_dir( path )
     self.uri = hotmixes.utils.request_path
-    self.path = '/data' .. hotmixes.utils.request_path
+    self.path = '/data/' .. self.titles.url .. hotmixes.utils.request_path
     self.dirs = stuff.dirs
     self.files = stuff.files
     self.images = stuff.images
