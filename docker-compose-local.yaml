@@ -1,0 +1,16 @@
+services:
+  videohotmix:
+    environment:
+      - ENVIRONMENT
+    build: .
+    networks:
+      - web
+    volumes:
+      - ./code:/srv/lapis
+      - ./_data:/mnt/data
+    ports:
+      - "8083:8080"
+
+networks:
+  web:
+    external: true

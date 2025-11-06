@@ -1,0 +1,24 @@
+<div class="all_files">
+
+    <div class="image_collage">
+<% for i, image in ipairs(images) do %>
+        <a href="<%= path .. image %>">
+            <img src="<%= path .. image %>">
+        </a>
+<% end %>
+    </div>
+
+<% for i, dir in ipairs(dirs) do %>
+    <br>
+        <a href="<%= uri .. dir %>" class="djsection"><span><%= dir %></span></a>
+    <br>
+<% end %>
+    <br>
+
+<% for i, file in ipairs(files) do %>
+    <a class="amixlink" href="<%= path .. file %>">
+        <span class="mixlink"><%= file %></span>
+    </a>
+    <br>
+<% end %>
+</div>

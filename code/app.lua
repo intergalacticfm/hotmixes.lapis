@@ -1,0 +1,42 @@
+local lapis = require("lapis")
+local config = require("lapis.config").get()
+local json_params = require("lapis.application").json_params
+
+local app = lapis.Application()
+app:enable("etlua")
+app.layout = require "views.layout"
+
+local autoload = require("lapis.util").autoload
+local handlers = autoload("handlers")
+
+local page_titles = {}
+
+if string.find(ngx.var.host, "panamaracing.club") then
+    page_titles = {
+        name = "Panama Racing Club Archive",
+        url = "panamaracing.club"
+    }
+elseif string.find(ngx.var.host, "videohotmix.net") then
+    page_titles = {
+        name = "Hotmix Video Archive",
+        url = "videohotmix.net"
+    }
+else
+    page_titles = {
+        name = "Local Test Archive",
+        url = "localhost"
+    }
+end
+
+app:get("/", function(self)
+    self.titles = page_titles
+    return handlers.Roothandler(self)
+end)
+
+app:get("/*", function(self)
+    self.titles = page_titles
+    return handlers.Roothandler(self)
+end)
+
+
+return app

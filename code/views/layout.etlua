@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= titles['name'] %>
+  <% if title then %>
+    - <%= title %>
+  <% end %>
+  </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+    <body class="body">
+        <h1 class="h1 h1mobile">Tons Of Mix - Downloads & Streams (right click + Save link as... for downloads)<br>
+            <%= titles.name %><br>
+            Sharing <%= total[0] %> files</h1>
+
+        <% content_for("inner") %>
+
+        <section class="latest">
+            <div class="latest_files">
+                <br>
+                <br>
+                <h1 class="h1">Latest uploads:</h1>
+            <% for i, file in ipairs(latestpath) do %>
+                <a class="amixlink" href="<%= '/data' .. file %>">
+                    <span class="mixlink"><%= latestname[i] %></span>
+                </a>
+                </br>
+            <% end %>
+            </div>
+        </section>
+
+    </body>
+</html>
