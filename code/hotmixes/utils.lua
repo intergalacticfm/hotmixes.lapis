@@ -23,6 +23,9 @@ local data_dir = config.mount
 local data_path = data_dir .. request_path
 -- setup
 
+local type_image = { jpg=true, jpeg=true, png=true, gif=true }
+local type_media = { mp3=true, flac=true, wav=true, mp4=true }
+local type_allowed = { jpg=true, jpeg=true, png=true, gif=true, mp3=true, flac=true, wav=true, mp4=true }
 
 local utils =  {}
 
@@ -30,11 +33,9 @@ utils['request_path'] = request_path
 utils['data_path'] = data_path
 
 -- we want to know if something is an image
-utils['match_image'] = function( file )
+utils['match_ext'] = function( file, ext )
     local filext = file:match("[^.]+$")
-    local extensions = { jpg=true, jpeg=true, png=true, gif=true }
-
-    if extensions[filext:lower()] then
+    if ext[filext:lower()] then
         return true
     else
         return false
@@ -45,8 +46,10 @@ utils['latest_files'] = function( directory )
     local i, t, popen = 0, {}, io.popen
     local pfile = popen('find "'..directory..'" -type f ! -name \'*.filepart\' -printf \'%C@ %p\n\'| sort -nr | head -7 | cut -f2- -d" "| sed s:"'..directory..'/"::')
     for filename in pfile:lines() do
-        i = i + 1
-        t[i] = filename
+        if  utils.match_ext ( filename, type_allowed ) then
+            i = i + 1
+            t[i] = filename
+        end
     end
     pfile:close()
     return t
@@ -57,9 +60,9 @@ utils['these_files'] = function( path )
     for file in lfs.dir( path ) do
         if file ~= "." and file ~= ".." and not string.match(file, ".filepart") then
             if lfs.attributes( path .. file, "mode" ) == "file" then
-                if utils.match_image( file ) then
+                if utils.match_ext( file, type_image ) then
                     table.insert( images, file )
-                else
+                elseif utils.match_ext( file, type_media ) then
                     table.insert( files, file )
                 end
             elseif lfs.attributes( path .. file, "mode" ) == "directory" then
