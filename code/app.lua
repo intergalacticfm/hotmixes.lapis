@@ -19,7 +19,8 @@ if string.find(ngx.var.host, "panamaracing.club") then
 elseif string.find(ngx.var.host, "videohotmix.net") then
     page_titles = {
         name = "Hotmix Video Archive",
-        url = "videohotmix.net"
+        url = "videohotmix.net",
+        css = "videohotmix.css"
     }
 else
     page_titles = {
