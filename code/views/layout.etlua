@@ -6,6 +6,7 @@
     - <%= title %>
   <% end %>
   </title>
+   <link rel="icon" type="image/x-icon" href="/static/<%= titles['url'] %>.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <% if titles.css ~= nil then %>
@@ -15,6 +16,9 @@
 <% end %>
 </head>
     <body class="body">
+    <header style="background-image: url('/static/<%= titles['url'] %>_header.png')">
+      <a href="/"><img src="/static/<%= titles['url'] %>.svg" alt="videohotmix logo" class="hotmixlogo"/></a>
+    </header>
         <h1 class="h1 h1mobile">Tons Of Mix - Downloads & Streams (right click + Save link as... for downloads)<br>
             <%= titles.name %><br>
             Sharing <%= total[0] %> files</h1>
