@@ -34,6 +34,11 @@ app:get("/", function(self)
     return handlers.Roothandler(self)
 end)
 
+app:get("/latest.json", function(self)
+    self.titles = page_titles
+    return handlers.Latesthandler(self)
+end)
+
 app:get("/*", function(self)
     self.titles = page_titles
     return handlers.Roothandler(self)
