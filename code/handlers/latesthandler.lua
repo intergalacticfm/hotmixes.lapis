@@ -9,7 +9,7 @@ local function Latesthandler(self)
     local path = config.get().mount .. self.titles.url
     local latest_path, latest_name = hotmixes.utils.these_latest( path )
 
-    local host = self.req.parsed_url.scheme .. '://' .. self.req.parsed_url.host .. ':' .. self.req.parsed_url.port
+    local host = self.req.parsed_url.scheme .. '://' .. self.req.parsed_url.host
     local data_path = host .. '/data/' .. self.titles.url .. '/'
     local latest_json = {}
 
