@@ -119,6 +119,7 @@
 .header
 {
     width: 100%;
+    background-image: url("/static/videohotmix.net_header.png");
     max-height: 185px;
 }
 
