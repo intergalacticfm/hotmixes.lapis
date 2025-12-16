@@ -9,9 +9,9 @@ local function Latesthandler(self)
     local path = config.get().mount .. self.titles.url
     local latest_path, latest_name = hotmixes.utils.these_latest( path )
 
-    data_path = 'https://' .. self.titles.url .. '/data/' .. self.titles.url .. '/'
-
-    latest_json = {}
+    local host = self.req.parsed_url.scheme .. '://' .. self.req.parsed_url.host .. ':' .. self.req.parsed_url.port
+    local data_path = host .. '/data/' .. self.titles.url .. '/'
+    local latest_json = {}
 
     for i, file in ipairs(latest_path) do
         latest_json[latest_name[i]] = data_path .. escape(file)
