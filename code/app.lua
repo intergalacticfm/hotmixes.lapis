@@ -14,13 +14,16 @@ local page_titles = {}
 if string.find(ngx.var.host, "panamaracing.club") then
     page_titles = {
         name = "Panama Racing Club Archive",
-        url = "panamaracing.club"
+        url = "panamaracing.club",
+        css = "panamaracing.css",
+        header = "panamaracing.club_header.png"
     }
 elseif string.find(ngx.var.host, "videohotmix.net") then
     page_titles = {
         name = "Hotmix Video Archive",
         url = "videohotmix.net",
-        css = "videohotmix.css"
+        css = "videohotmix.css",
+        header = "videohotmix.net.svg"
     }
 else
     page_titles = {

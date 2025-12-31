@@ -18,7 +18,11 @@ local function Roothandler(self)
     self.latestpath = latest_path
     self.latestname = latest_name
 
-    return { render = "root" }
+    if self.titles['url'] == "panamaracing.club" then
+        return { render = "root", layout = require "views.prc_layout" }
+    else
+        return { render = "root" }
+    end
 
 end
 
