@@ -15,7 +15,7 @@
     <header class="header">
       <a href="/"><img src="/static/<%= titles['header'] %>" alt="prc logo" class="prclogo"/></a>
     </header>
-        <h1 class="h1 h1mobile">Tons Of Mix - Downloads & Streams bladie(right click + Save link as... for downloads)<br>
+        <h1 class="h1 h1mobile">Tons Of Mix - Downloads & Streams (right click + Save link as... for downloads)<br>
             <%= titles.name %><br>
             Sharing <%= total[0] %> files
         </h1>
