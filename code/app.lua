@@ -23,7 +23,7 @@ elseif string.find(ngx.var.host, "videohotmix.net") then
         name = "Hotmix Video Archive",
         url = "videohotmix.net",
         css = "videohotmix.css",
-        header = "videohotmix.net.svg"
+        header = "videohotmix.net-logo.png"
     }
 else
     page_titles = {
