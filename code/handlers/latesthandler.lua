@@ -12,9 +12,15 @@ local function Latesthandler(self)
     local host = self.req.parsed_url.scheme .. '://' .. self.req.parsed_url.host
     local data_path = host .. '/data/' .. self.titles.url .. '/'
     local latest_json = {}
+    latest_json["files"] = {}
 
     for i, file in ipairs(latest_path) do
-        latest_json[latest_name[i]] = data_path .. escape(file)
+        local file_data = {}
+
+        file_data["name"] = latest_name[i]
+        file_data["url"] = data_path .. escape(file)
+
+        table.insert(latest_json["files"], file_data)
     end
 
     return { json = latest_json }
