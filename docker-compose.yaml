@@ -8,12 +8,12 @@ services:
       - /data:/mnt/data:ro
     labels:
       - traefik.enable=true
-      - traefik.http.routers.hotmixes.rule=Host(`videohotmix.net`) || Host(`www.videohotmix.net`) || Host(`panamaracing.club`) || Host(`www.hotmixxx.com`) || Host(`hotmixxx.com`)
+      - traefik.http.routers.hotmixes.rule=Host(`videohotmix.net`) || Host(`www.videohotmix.net`) || Host(`panamaracing.club`) || Host(`hotmixxx.com`)
       - traefik.http.routers.hotmixes.entrypoints=web
       - traefik.http.routers.hotmixes.middlewares=redirect-https-hotmixes
       - traefik.http.middlewares.redirect-https-hotmixes.redirectscheme.scheme=https
 
-      - traefik.http.routers.hotmixes_ssl.rule=Host(`videohotmix.net`) || Host(`www.videohotmix.net`) || Host(`panamaracing.club`) || Host(`www.hotmixxx.com`) || Host(`hotmixxx.com`)
+      - traefik.http.routers.hotmixes_ssl.rule=Host(`videohotmix.net`) || Host(`www.videohotmix.net`) || Host(`panamaracing.club`) || Host(`hotmixxx.com`)
       - traefik.http.routers.hotmixes_ssl.entrypoints=websecure
       - traefik.http.routers.hotmixes_ssl.tls.certresolver=myresolver
 
