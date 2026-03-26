@@ -21,11 +21,11 @@
             Sharing <%= total[0] %> files
         </h1>
     </div>
-        <img style="padding-bottom: 10px; padding-left: 10px; padding-top: 10px;" src="/static/panamaracing.club_divider.png">
+        <img class="divider" src="/static/panamaracing.club_divider.png">
     <div class="content">
         <% content_for("inner") %>
     </div>
-        <img style="padding-bottom: 10px; padding-left: 10px; padding-top: 10px;" src="/static/panamaracing.club_divider.png">
+        <img class="divider" src="/static/panamaracing.club_divider.png">
     <div class="content">
         <section class="latest">
             <div class="latest_files">
@@ -39,6 +39,6 @@
             </div>
         </section>
     </div>
-        <img style="padding-bottom: 10px; padding-left: 10px; padding-top: 10px;" src="/static/panamaracing.club_divider.png">
+        <img class="divider" src="/static/panamaracing.club_divider.png">
     </body>
 </html>

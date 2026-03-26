@@ -94,6 +94,14 @@
     padding-top: 10px;
 }
 
+.divider
+{
+    height: 23px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
 .h2
 {
     font-family: Helvetica;
@@ -122,7 +130,7 @@
 .djsectionmenu
 {
     font-family: Helvetica;
-    font-size: 33px;
+    font-size: 18px;
     color: var(--ifm-red);
     line-height: 1em;
     z-index: 100;
@@ -301,6 +309,7 @@
         column-count: 1;
     }
 }
+
 .content
 {
     width: 80%;
@@ -386,6 +395,11 @@
         height: 180px;
     }
 
+    .divider
+    {
+        height: 35px;
+    }
+
     .djsectionmenu
     {
         font-size: 25px;
@@ -435,6 +449,11 @@
     .prclogo
     {
         height: 220px;
+    }
+
+    .divider
+    {
+        height: 43px;
     }
 
     .djsectionmenu
