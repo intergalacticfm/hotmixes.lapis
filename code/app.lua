@@ -49,7 +49,7 @@ app:get("/latest.json", function(self)
     return handlers.Latesthandler(self)
 end)
 
-app:get("/latest.rss", function(self)
+app:get("/latest.xml", function(self)
     self.titles = page_titles
     return handlers.RSShandler(self)
 end)
