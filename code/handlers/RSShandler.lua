@@ -17,7 +17,7 @@ local function RSShandler(self)
     self.latestpath = latest_path
     self.latestname = latest_name
 
-    return { content_type = "text/rss", layout = require "views.rss" }
+    return { content_type = "text/rss+xml", layout = require "views.rss" }
 end
 
 return RSShandler
