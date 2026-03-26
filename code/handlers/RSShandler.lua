@@ -10,10 +10,7 @@ local function RSShandler(self)
     local latest_path, latest_name = hotmixes.utils.these_latest( path )
 
     local host = self.req.parsed_url.scheme .. '://' .. self.req.parsed_url.host
-    local data_path = host .. '/data/' .. self.titles.url .. '/'
-    local latest_json = {}
-    latest_json["files"] = {}
-
+    self.datapath = host .. '/data/' .. self.titles.url .. '/'
     self.latestpath = latest_path
     self.latestname = latest_name
 
