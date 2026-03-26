@@ -9,9 +9,9 @@
     <% for i, file in ipairs(latestpath) do %>
     <item>
         <title><%= latestname[i] %></title>
-        <link><%= datapath .. '/' .. file:gsub("#", "%%23") %></link>
+        <link><%= datapath .. file:gsub("#", "%%23") %></link>
         <description><![CDATA[<%= latestname[i] %>]]></description>
-        <guid><%= datapath .. '/' .. file:gsub("#", "%%23") %></guid>
+        <guid><%= datapath .. file:gsub("#", "%%23") %></guid>
     </item>
     <% end %>
 </channel>
