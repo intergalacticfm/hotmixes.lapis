@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+<channel>
+    <atom:link href="https://<%= titles['url'] %>/latest.xml" rel="self" type="application/rss+xml" />
+    <title>Hotmixes</title>
+    <link><%= titles['url'] %></link>
+    <description>Latest uploads</description>
+    <% for i, file in ipairs(latestpath) do %>
+    <item>
+        <title><%= latestname[i] %></title>
+        <link><%= 'https://' .. titles.url .. '/data/' .. titles.url .. '/' .. file:gsub("#", "%%23") %></link>
+        <description><![CDATA[<%= latestname[i] %>]]></description>
+        <guid><%= 'https://' .. titles.url .. '/data/' .. titles.url .. '/' .. file:gsub("#", "%%23") %></guid>
+    </item>
+    <% end %>
+</channel>
+</rss>
