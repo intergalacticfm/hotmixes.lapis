@@ -12,7 +12,7 @@ local function Roothandler(self)
 
     self.total = hotmixes.utils.total_files_dir( path )
     self.uri = hotmixes.utils.request_path
-    self.path = escape('/data/' .. self.titles.url .. hotmixes.utils.request_path)
+    self.path = '/data/' .. self.titles.url .. hotmixes.utils.request_path
     self.dirs = stuff.dirs
     self.files = stuff.files
     self.images = stuff.images
