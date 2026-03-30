@@ -30,6 +30,14 @@ local type_allowed = { jpg=true, jpeg=true, png=true, gif=true, mp3=true, flac=t
 
 local utils =  {}
 
+utils['compare_file'] = function(a, b)
+  return a["file"] < b["file"]
+end
+
+utils['compare_dir'] = function(a, b)
+  return a["dir"] < b["dir"]
+end
+
 utils['request_path'] = request_path
 utils['data_path'] = data_path
 
@@ -73,8 +81,8 @@ utils['these_files'] = function( path )
     end
 
     table.sort( images )
-    -- table.sort( files )
-    -- table.sort( dirs )
+    table.sort( files, utils.compare_file )
+    table.sort( dirs, utils.compare_dir )
 
     local stuff = {
         files = files,
