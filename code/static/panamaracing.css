@@ -11,6 +11,7 @@
 .h1
 {
     font-family: Helvetica;
+    font-size: 16px;
     color: var(--ifm-white);
     padding-top: 5px;
     padding-bottom: 5px;
@@ -22,9 +23,9 @@
 .p
 {
     font-family: Helvetica;
+    font-size: 6px;
     color: var(--ifm-grey);
     margin-bottom: 45px;
-    font-size: 10px;
 }
 
 .href
@@ -37,7 +38,7 @@
 {
     line-height: 16px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 10px;
     margin-bottom: 0;
     margin-top: 0;
     font-family: Helvetica;
@@ -49,7 +50,7 @@
     color: var(--ifm-grey);
     line-height: 1.6em;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 10px;
     text-decoration: none;
     background: var(--ifm-deep-black);
     display: inline-flex;
@@ -61,19 +62,13 @@
 
 .amixlink:hover
 {
-    font-family: Helvetica;
     color: #000;
-    line-height: 1.6em;
-    font-weight: 600;
-    font-size: 14px;
     background: var(--ifm-red);
 }
 
 .body
 {
-    width: 80%;
-    padding-left: 10%;
-    padding-right: 10%;
+    width: 100%;
     background-color: var(--ifm-black);
 }
 
@@ -81,7 +76,7 @@
 {
     font-family: Helvetica;
     font-weight: 900;
-    font-size: 16px;
+    font-size: 12px;
     color: var(--ifm-grey);
     padding: 5px;
     margin-top: 2%;
@@ -93,7 +88,15 @@
 
 .prclogo
 {
-    width: 1440px;
+    height: 120px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.divider
+{
+    height: 23px;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-top: 10px;
@@ -112,7 +115,7 @@
 .header
 {
     width: 100%;
-    max-height: 220px;
+    max-height: 120px;
 }
 
 .footer
@@ -124,18 +127,10 @@
     clear: both;
 }
 
-.djsection
-{
-    font-family: Helvetica;
-    font-size: 18px;
-    text-decoration: inherit;
-    color: var(--ifm-red);
-}
-
 .djsectionmenu
 {
     font-family: Helvetica;
-    font-size: 33px;
+    font-size: 18px;
     color: var(--ifm-red);
     line-height: 1em;
     z-index: 100;
@@ -156,15 +151,9 @@
 .djsection
 {
     font-family: Helvetica;
-    font-size: 33px;
+    font-size: 18px;
+    text-decoration: inherit;
     color: var(--ifm-red);
-    line-height: 1em;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    padding-top: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
 }
 
 .djsection:hover
@@ -176,7 +165,7 @@
 {
     font-family: Helvetica;
     color: var(--ifm-red);
-    font-size: 24px;
+    font-size: 16px;
     padding-top: 5px;
     border-bottom: 2px solid var(--ifm-red);
 }
@@ -232,10 +221,7 @@
         padding-right: 5%;
         width: 40%;
     }
-    .h2
-    {
-        font-size: 14px;
-    }
+
     .footer
     {
         margin-top: 15%;
@@ -324,6 +310,13 @@
     }
 }
 
+.content
+{
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
 .latest
 {
     position: relative;
@@ -361,10 +354,115 @@
     }
 }
 
-@media (max-width:767px)
-{
-    .h1mobile
+@media screen and (min-width: 600px) {
+
+    .h1{
+        font-size: 18px;
+    }
+
+    .p
+    {
+        font-size: 8px;
+    }
+
+    .mixlink
+    {
+        font-size: 12px;
+    }
+
+    .amixlink
+    {
+        font-size: 12px;
+    }
+
+    .mixsections
+    {
+        font-size: 14px;
+    }
+
+    .h2
     {
         font-size: 18px;
+    }
+
+    .header
+    {
+        max-height: 180px;
+    }
+
+    .prclogo
+    {
+        height: 180px;
+    }
+
+    .divider
+    {
+        height: 35px;
+    }
+
+    .djsectionmenu
+    {
+        font-size: 25px;
+    }
+
+    .djsection
+    {
+        font-size: 28px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .h1{
+        font-size: 26px;
+    }
+
+    .p
+    {
+        font-size: 10px;
+    }
+
+    .mixlink
+    {
+        font-size: 14px;
+    }
+
+    .amixlink
+    {
+        font-size: 14px;
+    }
+
+    .mixsections
+    {
+        font-size: 16px;
+    }
+
+    .h2
+    {
+        font-size: 24px;
+    }
+
+    .header
+    {
+        max-height: 220px;
+    }
+
+    .prclogo
+    {
+        height: 220px;
+    }
+
+    .divider
+    {
+        height: 43px;
+    }
+
+    .djsectionmenu
+    {
+        font-size: 33px;
+    }
+
+    .djsection
+    {
+        font-size: 33px;
     }
 }

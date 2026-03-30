@@ -15,18 +15,20 @@
     <header class="header">
       <a href="/"><img src="/static/<%= titles['header'] %>" alt="prc logo" class="prclogo"/></a>
     </header>
-        <h1 class="h1 h1mobile">Tons Of Mix - Downloads & Streams (right click + Save link as... for downloads)<br>
+    <div class="content">
+        <h1 class="h1">Tons Of Mix - Downloads & Streams (right click + Save link as... for downloads)<br>
             <%= titles.name %><br>
             Sharing <%= total[0] %> files
         </h1>
-        <img src="/static/panamaracing.club_divider.png">
-
+    </div>
+        <img class="divider" src="/static/panamaracing.club_divider.png">
+    <div class="content">
         <% content_for("inner") %>
-
+    </div>
+        <img class="divider" src="/static/panamaracing.club_divider.png">
+    <div class="content">
         <section class="latest">
             <div class="latest_files">
-                <br>
-                <br>
                 <h1 class="h1">Latest uploads:</h1>
             <% for i, file in ipairs(latestpath) do %>
                 <a class="amixlink" href="<%= '/data/' .. titles.url .. '/' .. file:gsub("#", "%%23") %>">
@@ -36,6 +38,7 @@
             <% end %>
             </div>
         </section>
-
+    </div>
+        <img class="divider" src="/static/panamaracing.club_divider.png">
     </body>
 </html>

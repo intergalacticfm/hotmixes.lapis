@@ -16,6 +16,7 @@
 .h1
 {
     font-family: ArcadeFont;
+    font-size: 16px;
     color: var(--ifm-red);
     border-top: 3px solid var(--ifm-red);
     border-bottom: 3px solid var(--ifm-red);
@@ -29,9 +30,9 @@
 .p
 {
     font-family: ArcadeFont;
+    font-size: 6px;
     color: var(--ifm-grey);
     margin-bottom: 45px;
-    font-size: 10px;
 }
 
 .href
@@ -44,7 +45,7 @@
 {
     line-height: 16px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 10px;
     margin-bottom: 0;
     margin-top: 0;
     font-family: ArcadeFont;
@@ -56,7 +57,7 @@
     color: var(--ifm-grey);
     line-height: 1.6em;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 10px;
     text-decoration: none;
     background: var(--ifm-deep-black);
     display: inline-flex;
@@ -68,11 +69,7 @@
 
 .amixlink:hover
 {
-    font-family: ArcadeFont;
     color: #000;
-    line-height: 1.6em;
-    font-weight: 600;
-    font-size: 14px;
     background: var(--ifm-red);
 }
 
@@ -88,7 +85,7 @@
 {
     font-family: ArcadeFont;
     font-weight: 900;
-    font-size: 16px;
+    font-size: 12px;
     color: var(--ifm-grey);
     padding: 5px;
     margin-top: 2%;
@@ -109,7 +106,7 @@
 .h2
 {
     font-family: ArcadeFont;
-    font-size: 24px;
+    font-size: 16px;
     color: var(--ifm-grey);
     font-weight: 200;
     border-bottom: 2px solid var(--ifm-grey);
@@ -132,18 +129,10 @@
     clear: both;
 }
 
-.djsection
-{
-    font-family: ArcadeFont;
-    font-size: 18px;
-    text-decoration: inherit;
-    color: var(--ifm-red);
-}
-
 .djsectionmenu
 {
     font-family: ArcadeFont;
-    font-size: 33px;
+    font-size: 18px;
     color: var(--ifm-red);
     line-height: 1em;
     z-index: 100;
@@ -164,15 +153,9 @@
 .djsection
 {
     font-family: ArcadeFont;
-    font-size: 33px;
+    font-size: 18px;
+    text-decoration: inherit;
     color: var(--ifm-red);
-    line-height: 1em;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    padding-top: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
 }
 
 .djsection:hover
@@ -184,7 +167,7 @@
 {
     font-family: ArcadeFont;
     color: var(--ifm-red);
-    font-size: 24px;
+    font-size: 16px;
     padding-top: 5px;
     border-bottom: 2px solid var(--ifm-red);
 }
@@ -240,10 +223,7 @@
         padding-right: 5%;
         width: 40%;
     }
-    .h2
-    {
-        font-size: 14px;
-    }
+
     .footer
     {
         margin-top: 15%;
@@ -369,10 +349,85 @@
     }
 }
 
-@media (max-width:767px)
-{
-    .h1mobile
+@media screen and (min-width: 600px) {
+
+    .h1{
+        font-size: 18px;
+    }
+
+    .p
+    {
+        font-size: 8px;
+    }
+
+    .mixlink
+    {
+        font-size: 12px;
+    }
+
+    .amixlink
+    {
+        font-size: 12px;
+    }
+
+    .mixsections
+    {
+        font-size: 14px;
+    }
+
+    .h2
     {
         font-size: 18px;
+    }
+
+    .djsectionmenu
+    {
+        font-size: 25px;
+    }
+
+    .djsection
+    {
+        font-size: 28px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .h1{
+        font-size: 26px;
+    }
+
+    .p
+    {
+        font-size: 10px;
+    }
+
+    .mixlink
+    {
+        font-size: 14px;
+    }
+
+    .amixlink
+    {
+        font-size: 14px;
+    }
+
+    .mixsections
+    {
+        font-size: 16px;
+    }
+
+    .h2
+    {
+        font-size: 24px;
+    }
+
+    .djsectionmenu
+    {
+        font-size: 33px;
+    }
+
+    .djsection
+    {
+        font-size: 33px;
     }
 }
