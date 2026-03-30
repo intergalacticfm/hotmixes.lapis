@@ -18,7 +18,7 @@ local function Latesthandler(self)
         local file_data = {}
 
         file_data["name"] = latest_name[i]
-        file_data["url"] = data_path .. escape(file)
+        file_data["url"] = data_path .. file
 
         table.insert(latest_json["files"], file_data)
     end

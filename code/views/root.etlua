@@ -10,14 +10,14 @@
 
 <% for i, dir in ipairs(dirs) do %>
     <br>
-        <a href="<%= uri .. dir %>" class="djsection"><span><%= dir %></span></a>
+        <a href="<%= uri .. dir["sane"] %>" class="djsection"><span><%= dir["dir"] %></span></a>
     <br>
 <% end %>
     <br>
 
 <% for i, file in ipairs(files) do %>
-    <a class="amixlink" href="<%= path .. file:gsub("#", "%%23") %>">
-        <span class="mixlink"><%= file %></span>
+    <a class="amixlink" href="<%= path .. file["sane"] %>">
+        <span class="mixlink"><%= file["file"] %></span>
     </a>
     <br>
 <% end %>

@@ -1,5 +1,6 @@
 local lfs = require 'lfs_ffi'
 local config = require("lapis.config").get()
+local escape = require("lapis.util").escape
 
 
 -- setup
@@ -63,17 +64,17 @@ utils['these_files'] = function( path )
                 if utils.match_ext( file, type_image ) then
                     table.insert( images, file )
                 elseif utils.match_ext( file, type_media ) then
-                    table.insert( files, file )
+                    table.insert( files, {sane=escape(file), file=file} )
                 end
             elseif lfs.attributes( path .. file, "mode" ) == "directory" then
-                table.insert( dirs, file )
+                table.insert( dirs, {sane=escape(file), dir=file} )
             end
         end
     end
 
     table.sort( images )
-    table.sort( files )
-    table.sort( dirs )
+    -- table.sort( files )
+    -- table.sort( dirs )
 
     local stuff = {
         files = files,
@@ -88,7 +89,7 @@ utils['these_latest'] = function( path )
     local latest_path, latest_name = {}, {}
 
     for i, file_path in ipairs( utils.latest_files( path ) ) do
-        table.insert( latest_path, file_path)
+        table.insert( latest_path, escape(file_path))
 
         local temp = ""
         local result = ""
