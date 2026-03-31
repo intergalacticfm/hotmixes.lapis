@@ -15,7 +15,7 @@ end
 
 local request_path
 if request_uri ~= '/' then
-    request_path = request_uri .. '/'
+    request_path = request_uri  .. '/'
 else
     request_path = request_uri
 end
@@ -29,14 +29,6 @@ local type_media = { mp3=true, flac=true, wav=true, mp4=true }
 local type_allowed = { jpg=true, jpeg=true, png=true, gif=true, mp3=true, flac=true, wav=true, mp4=true }
 
 local utils =  {}
-
-utils['compare_file'] = function(a, b)
-  return a["file"] < b["file"]
-end
-
-utils['compare_dir'] = function(a, b)
-  return a["dir"] < b["dir"]
-end
 
 utils['request_path'] = request_path
 utils['data_path'] = data_path
@@ -72,17 +64,17 @@ utils['these_files'] = function( path )
                 if utils.match_ext( file, type_image ) then
                     table.insert( images, file )
                 elseif utils.match_ext( file, type_media ) then
-                    table.insert( files, {sane=escape(file), file=file} )
+                    table.insert( files, file )
                 end
             elseif lfs.attributes( path .. file, "mode" ) == "directory" then
-                table.insert( dirs, {sane=escape(file), dir=file} )
+                table.insert( dirs, file )
             end
         end
     end
 
     table.sort( images )
-    table.sort( files, utils.compare_file )
-    table.sort( dirs, utils.compare_dir )
+    table.sort( files )
+    table.sort( dirs )
 
     local stuff = {
         files = files,
