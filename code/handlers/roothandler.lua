@@ -11,7 +11,7 @@ local function Roothandler(self)
     local latest_path, latest_name = hotmixes.utils.these_latest( path )
 
     self.total = hotmixes.utils.total_files_dir( path )
-    self.uri = hotmixes.utils.request_path:sub(2) -- remove leading slash
+    self.uri = hotmixes.utils.request_path
     self.path = '/data/' .. self.titles.url .. hotmixes.utils.request_path
     self.dirs = stuff.dirs
     self.files = stuff.files
