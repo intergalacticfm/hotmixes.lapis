@@ -30,6 +30,10 @@ local type_allowed = { jpg=true, jpeg=true, png=true, gif=true, mp3=true, flac=t
 
 local utils =  {}
 
+local function hotesc ( str )
+    return escape(str):gsub("%%2f", "/"):gsub("%%2d", "-"):gsub("%%2e", ".")
+end
+
 utils['request_path'] = request_path
 utils['data_path'] = data_path
 
@@ -84,12 +88,17 @@ utils['these_files'] = function( path )
     return stuff
 end
 
+utils['hotesc'] = function( str )
+    return hotesc(str)
+end
+
 utils['these_latest'] = function( path )
     -- list last 10 modified files in our directory
     local latest_path, latest_name = {}, {}
 
     for i, file_path in ipairs( utils.latest_files( path ) ) do
-        table.insert( latest_path, escape(file_path))
+        local escpath = hotesc(file_path)
+        table.insert( latest_path, escpath )
 
         local temp = ""
         local result = ""

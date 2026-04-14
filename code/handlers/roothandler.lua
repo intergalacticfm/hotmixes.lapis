@@ -1,6 +1,4 @@
-local to_json = require("lapis.util").to_json
 local autoload = require("lapis.util").autoload
-local escape = require("lapis.util").escape
 local config = require("lapis.config")
 local hotmixes = autoload("hotmixes")
 
@@ -18,7 +16,7 @@ local function Roothandler(self)
     self.images = stuff.images
     self.latestpath = latest_path
     self.latestname = latest_name
-    self.functions = { escape = escape }
+    self.functions = { hotesc = hotmixes.utils.hotesc }
 
     if self.titles['url'] == "panamaracing.club" then
         return { render = "root", layout = require "views.prc_layout" }
