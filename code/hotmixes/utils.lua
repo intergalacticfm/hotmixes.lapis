@@ -138,7 +138,7 @@ end
 utils['rss_latest'] = function( path )
     local latest_path, latest_name, latest_size, latest_date = {}, {}, {}, {}
 
-    for i, file_path in ipairs( utils.latest_files( path ) ) do
+    for i, file_path in ipairs( utils.latest_audio( path ) ) do
         local popen = io.popen
 
         -- get the size of the file

@@ -9,7 +9,9 @@
     <language>en-us</language>
     <itunes:author>Intergalactic FM</itunes:author>
     <description>Latest uploads</description>
-    <itunes:explicit>no</itunes:explicit>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:category>Music</itunes:category>
+    <itunes:image>https://intergalactic.fm/themes/custom/ifm/logo.svg</itunes:image>
 
     <% for i, file in ipairs(latestpath) do %>
     <item>
@@ -18,6 +20,7 @@
         <guid><%= datapath .. file %></guid>
         <pubDate><%= latestdate[i] %></pubDate>
         <description><![CDATA[<%= latestname[i] %>]]></description>
+        <itunes:explicit>false</itunes:explicit>
     </item>
     <% end %>
 </channel>
