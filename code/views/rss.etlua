@@ -1,17 +1,23 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+    xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
 
 <channel>
-    <atom:link href="https://<%= titles['url'] %>/latest.xml" rel="self" type="application/rss+xml" />
     <title><%= titles['name'] %></title>
     <link>https://<%= titles['url'] %></link>
+    <language>en-us</language>
+    <itunes:author>Intergalactic FM</itunes:author>
     <description>Latest uploads</description>
+    <itunes:explicit>no</itunes:explicit>
+
     <% for i, file in ipairs(latestpath) do %>
     <item>
         <title><%= latestname[i] %></title>
-        <link><%= datapath .. file:gsub("#", "%%23") %></link>
+        <enclosure url="<%= datapath .. file %>" length="<%= latestsize[i] %>" type="audio/mpeg"/>
+        <guid><%= datapath .. file %></guid>
+        <pubDate><%= latestdate[i] %></pubDate>
         <description><![CDATA[<%= latestname[i] %>]]></description>
-        <guid><%= datapath .. file:gsub("#", "%%23") %></guid>
     </item>
     <% end %>
 </channel>

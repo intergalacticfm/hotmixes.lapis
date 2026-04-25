@@ -26,6 +26,7 @@ local data_path = data_dir .. request_path
 
 local type_image = { jpg=true, jpeg=true, png=true, gif=true }
 local type_media = { mp3=true, flac=true, wav=true, mp4=true }
+local type_audio = { mp3=true, flac=true, wav=true }
 local type_allowed = { jpg=true, jpeg=true, png=true, gif=true, mp3=true, flac=true, wav=true, mp4=true }
 
 local utils =  {}
@@ -52,6 +53,19 @@ utils['latest_files'] = function( directory )
     local pfile = popen('find -L "'..directory..'" -type f ! -name \'*.filepart\' ! -name \'*.png\' ! -name \'*.jpg\' ! -name \'*.jpeg\' ! -name \'*.gif\' -printf \'%C@ %p\n\'| sort -nr | head -7 | cut -f2- -d" "| sed s:"'..directory..'/"::')
     for filename in pfile:lines() do
         if  utils.match_ext ( filename, type_allowed ) then
+            i = i + 1
+            t[i] = filename
+        end
+    end
+    pfile:close()
+    return t
+end
+
+utils['latest_audio'] = function( directory )
+    local i, t, popen = 0, {}, io.popen
+    local pfile = popen('find -L "'..directory..'" -type f ! -name \'*.filepart\' ! -name \'*.mp4\' ! -name \'*.png\' ! -name \'*.jpg\' ! -name \'*.jpeg\' ! -name \'*.gif\' -printf \'%C@ %p\n\'| sort -nr | head -7 | cut -f2- -d" "| sed s:"'..directory..'/"::')
+    for filename in pfile:lines() do
+        if  utils.match_ext ( filename, type_audio ) then
             i = i + 1
             t[i] = filename
         end
@@ -118,6 +132,51 @@ utils['these_latest'] = function( path )
     end
 
     return latest_path, latest_name
+end
+
+
+utils['rss_latest'] = function( path )
+    local latest_path, latest_name, latest_size, latest_date = {}, {}, {}, {}
+
+    for i, file_path in ipairs( utils.latest_files( path ) ) do
+        local popen = io.popen
+
+        -- get the size of the file
+        local psize = popen('wc -c <'..path..'/'..file_path)
+        for size in psize:lines() do
+            ngx.log(ngx.INFO, size)
+            table.insert( latest_size, size)
+        end
+        psize:close()
+
+        -- get the date of the file
+        local pdate = popen('date -d @$(stat -c "%Y" '..path..'/'..file_path..') "+%a, %-d %b %Y %H:%M:%S %Z"')
+        for date in pdate:lines() do
+            table.insert( latest_date, date )
+        end
+        pdate:close()
+
+        local escpath = hotesc(file_path)
+        table.insert( latest_path, escpath )
+
+        local temp = ""
+        local result = ""
+        for i = file_path:len(), 1, -1 do
+            if file_path:sub(i,i) ~= "/" then
+                temp = temp..file_path:sub(i,i)
+            else
+                break
+            end
+        end
+
+        for j = temp:len(), 1, -1 do
+            result = result..temp:sub(j,j)
+        end
+
+        table.insert( latest_name, result )
+    end
+
+    return latest_path, latest_name, latest_size, latest_date
 end
 
 utils['total_files_dir'] = function( path )
