@@ -4,14 +4,16 @@
     xmlns:content="http://purl.org/rss/1.0/modules/content/">
 
 <channel>
+    <atom:link href="https://<%= titles['url'] %>/latest.rss"
+        rel="self" type="application/rss+xml" />
     <title><%= titles['name'] %></title>
     <link>https://<%= titles['url'] %></link>
     <language>en-us</language>
     <itunes:author>Intergalactic FM</itunes:author>
     <description>Latest uploads</description>
     <itunes:explicit>false</itunes:explicit>
-    <itunes:category>Music</itunes:category>
-    <itunes:image>https://intergalactic.fm/themes/custom/ifm/logo.svg</itunes:image>
+    <itunes:category text="Music"/>
+    <itunes:image href="https://intergalactic.fm/themes/custom/ifm/logo.svg"/>
 
     <% for i, file in ipairs(latestpath) do %>
     <item>
