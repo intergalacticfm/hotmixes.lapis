@@ -190,4 +190,13 @@ utils['total_files_dir'] = function( path )
     return t
 end
 
+utils['rss_date_now'] = function()
+    local popen = io.popen
+    local pdate = popen('date "+%a, %-d %b %Y %H:%M:%S %Z"')
+    for date in pdate:lines() do
+        return date
+    end
+    pdate:close()
+end
+
 return utils

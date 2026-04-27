@@ -22,6 +22,8 @@
         <itunes:category text="Electronic"/>
     </itunes:category>
     <itunes:image href="https://intergalactic.fm/themes/custom/ifm/logo.svg"/>
+    <lastBuildDate><%= datenow %></lastBuildDate>
+    <podcast:guid>intergalactic-fm-<%= titles['feed'] %>-feed</podcast:guid>
 
     <% for i, file in ipairs(latestpath) do %>
     <item>

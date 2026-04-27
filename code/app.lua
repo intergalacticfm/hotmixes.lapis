@@ -16,21 +16,24 @@ if string.find(ngx.var.host, "panamaracing.club") then
         name = "Panama Racing Club Archive",
         url = "panamaracing.club",
         css = "panamaracing.css",
-        header = "panamaracing.club_header.png"
+        header = "panamaracing.club_header.png",
+        feed = "panamaracing.club"
     }
 elseif string.find(ngx.var.host, "videohotmix.net") then
     page_titles = {
         name = "Hotmix Video Archive",
         url = "videohotmix.net",
         css = "videohotmix.css",
-        header = "videohotmix.net-logo.png"
+        header = "videohotmix.net-logo.png",
+        feed = "videohotmix"
     }
 elseif string.find(ngx.var.host, "hotmixxx.com") then
     page_titles = {
         name = "Hotmix Video Archive",
         url = "videohotmix.net",
         css = "videohotmix.css",
-        header = "videohotmix.net-logo.png"
+        header = "videohotmix.net-logo.png",
+        feed = "hotmixxx"
     }
 else
     page_titles = {

@@ -15,6 +15,7 @@ local function RSShandler(self)
     self.latestname = latest_name
     self.latestsize = latest_size
     self.latestdate = latest_date
+    self.datenow = hotmixes.utils.rss_date_now()
 
     return { content_type = "application/rss+xml", layout = require "views.rss" }
 end
