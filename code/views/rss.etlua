@@ -12,9 +12,15 @@
     <link>https://<%= titles['url'] %></link>
     <language>en-us</language>
     <itunes:author>Intergalactic FM</itunes:author>
-    <description>Latest uploads</description>
+    <itunes:owner>
+        <itunes:name>Intergalactic FM</itunes:name>
+    </itunes:owner>
+    <description>Latest audio uploads on <%= titles['name'] %></description>
+    <itunes:summary>Latest audio uploads on <%= titles['name'] %></itunes:summary>
     <itunes:explicit>false</itunes:explicit>
-    <itunes:category text="Music"/>
+    <itunes:category text="Music">
+        <itunes:category text="Electronic"/>
+    </itunes:category>
     <itunes:image href="https://intergalactic.fm/themes/custom/ifm/logo.svg"/>
 
     <% for i, file in ipairs(latestpath) do %>
