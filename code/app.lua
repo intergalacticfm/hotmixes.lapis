@@ -35,6 +35,15 @@ elseif string.find(ngx.var.host, "hotmixxx.com") then
         header = "videohotmix.net-logo.png",
         feed = "hotmixxx"
     }
+
+elseif string.find(ngx.var.host, "hotmixes.net") then
+    page_titles = {
+        name = "Hotmix Video Archive",
+        url = "videohotmix.net",
+        css = "videohotmix.css",
+        header = "videohotmix.net-logo.png",
+        feed = "hotmixes"
+    }
 else
     page_titles = {
         name = "Local Test Archive",
