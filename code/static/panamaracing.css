@@ -15,7 +15,8 @@ body {
 }
 
 body {
-    margin: 5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
     background-color: var(--ifm-black);
     color: var(--ifm-white);
     font-family: Helvetica, Arial, sans-serif;
@@ -28,10 +29,9 @@ body {
 }
 
 .container {
-    width: min(90%, 100rem);
+    width: min(80%, 900rem);
     /* 1600px */
     margin: 0 auto;
-    font-size: 1rem;
 }
 
 .header-grid {
@@ -69,7 +69,7 @@ body {
 
 
 .prc-stripes {
-    width: 90%;
+    width: 100%;
     --square: 0.55rem;
     /* 10px */
     height: calc(var(--square) * 3);
@@ -81,17 +81,17 @@ body {
     margin: 0.625rem 0 0.9375rem;
     /* 10px 0 15px */
     font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(1.2rem, 1.2rem + 0.5vw, 2rem);
     line-height: 1em;
     color: inherit;
-    padding-left: 5rem;
-    padding-right: 10rem;
+    padding-left: 4rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
 .h1 {
     font-family: Helvetica, Arial, sans-serif;
-    font-size: clamp(1.8rem, 1rem + 2vw, 3rem);
+    font-size: clamp(1.3rem, 1.3rem + 0.5vw, 2rem);
     color: var(--ifm-white);
     padding-top: 0.3125rem;
     /* 5px */
@@ -104,14 +104,6 @@ body {
     line-height: 1em;
 }
 
-.p {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 1rem;
-    color: var(--ifm-grey);
-    margin-bottom: 2.8125rem;
-    /* 45px */
-}
-
 .href {
     font-family: Helvetica, Arial, sans-serif;
     text-decoration: none;
@@ -121,7 +113,7 @@ body {
     line-height: 1rem;
     /* 16px */
     font-weight: 600;
-    font-size: 0.625rem;
+    font-size: clamp(0.6rem, 0.6rem + 0.2vw, 1rem);
     /* 10px */
     margin: 0;
     font-family: Helvetica, Arial, sans-serif;
@@ -193,47 +185,15 @@ body {
     clear: both;
 }
 
-.djsectionmenu {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 1.125rem;
-    /* 18px */
-    color: var(--ifm-red);
-    line-height: 1em;
-    z-index: 100;
-    display: block;
-    width: 10%;
-    height: 8.125rem;
-    /* 130px */
-    float: left;
-    margin-top: 0.3125rem;
-    /* 5px */
-    margin-bottom: 0.3125rem;
-    /* 5px */
-    min-width: 8.125rem;
-    /* 130px */
-}
-
-.djsectionmenu:hover {
-    background-color: #e3301a;
-}
-
 .djsection {
     font-family: Helvetica, Arial, sans-serif;
     text-decoration: inherit;
     color: var(--ifm-red);
+    font-size: clamp(1.3rem, 1rem + 1.5vw, 2rem);
 }
 
 .djsection:hover {
     background-color: #000;
-}
-
-.h2 {
-    font-family: Helvetica, Arial, sans-serif;
-    color: var(--ifm-red);
-    padding-top: 0.3125rem;
-    /* 5px */
-    border-bottom: 0.125rem solid var(--ifm-red);
-    /* 2px */
 }
 
 .homeheader {
@@ -250,13 +210,6 @@ body {
     /* 200px */
 }
 
-.footerlegal {
-    right: 0;
-    float: right;
-    margin-top: 5rem;
-    /* 80px */
-}
-
 .column {
     float: left;
     margin-left: 0;
@@ -271,265 +224,206 @@ body {
     display: table;
 }
 
-@media screen and (max-width: 48rem) {
-
-    /* 768px */
-    .column {
-        padding-left: 5%;
-        padding-right: 5%;
-        width: 40%;
-    }
-
-    .footer {
-        margin-top: 15%;
-    }
-
-    .brand-logos img {
-        max-width: 100%;
-        height: auto;
-    }
-}
-
-@media screen and (max-width: 31.25rem) {
-
-    /* 500px */
-    .column {
-        padding-left: 0;
-        padding-right: 5%;
-        width: 45%;
-    }
-
-    .brand-logos img {
-        max-width: 100%;
-        height: auto;
-    }
-}
-
-.profileimg {
-    overflow: hidden;
-    height: auto;
-    width: 30%;
-}
-
-.profilesection {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 2.5%;
-    background-color: var(--ifm-red);
-}
-
-.image_collage {
-    line-height: 0;
-    -webkit-column-count: 5;
-    -webkit-column-gap: 0;
-    -moz-column-count: 5;
-    -moz-column-gap: 0;
-    column-count: 5;
-    column-gap: 0;
-}
-
-.image_collage img {
-    width: 100% !important;
-    height: auto !important;
-}
-
-@media (max-width: 75rem) {
-
-    /* 1200px */
-    .image_collage {
-        -moz-column-count: 4;
-        -webkit-column-count: 4;
-        column-count: 4;
-    }
-}
-
-@media (max-width: 62.5rem) {
-
-    /* 1000px */
-    .image_collage {
-        -moz-column-count: 3;
-        -webkit-column-count: 3;
-        column-count: 3;
-    }
-}
-
-@media (max-width: 50rem) {
-
-    /* 800px */
-    .image_collage {
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
-    }
-}
-
-@media (max-width: 25rem) {
-
-    /* 400px */
-    .image_collage {
-        -moz-column-count: 1;
-        -webkit-column-count: 1;
-        column-count: 1;
-    }
-}
-
-.content {
+content {
     padding: 2em;
     width: min(90%, 100rem);
-    /* 1600px */
-    margin: 0 auto;
 }
 
 .latest {
-    position: relative;
-    clear: both;
-}
-
-.latestdiv {
-    width: 100%;
-    position: relative;
-    clear: both;
-    float: left;
-}
-
-.sponsors {
-    margin-top: 1.25rem;
-    /* 20px */
-    clear: both;
-    float: left;
+    padding: 2em;
+    width: min(90%, 100rem);
 }
 
 .linkimg:hover {
     filter: invert(70%);
 }
 
-@media (max-width: 31.1875rem) {
+/* RESPONSIVE CSS FOR DIFFERENT DEVICES */
 
-    /* 499px */
-    .djsectionmenu500 {
-        height: 4.375rem;
-        /* 70px */
-        overflow: hidden;
-        min-width: 3.75rem;
-        /* 60px */
-        width: 50%;
-    }
-}
+/* ===========================
+   MOBILE (fino a 600px)
+   =========================== */
+@media (max-width: 600px) {
 
-@media screen and (min-width: 37.5rem) {
-
-    /* 600px */
-    .h1 {
-        font-size: 1.125rem;
-        /* 18px */
+    .container {
+        width: 95%;
+        margin: 0 auto;
     }
 
-    .p {
-        font-size: 0.5rem;
-        /* 8px */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .mixlink {
-        font-size: 0.75rem;
-        /* 12px */
+    .header-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
     }
 
-    .amixlink {
-        font-size: 0.75rem;
-        /* 12px */
+    .brand-logos {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 0.25rem;
     }
 
-    .mixsections {
-        font-size: 0.875rem;
-        /* 14px */
+    .brand-logos img {
+        max-width: 40%;
+        height: auto;
     }
 
-    .h2 {
-        font-size: 1.125rem;
-        /* 18px */
-    }
-
-    .prclogo {
-        height: 11.25rem;
-        /* 180px */
-    }
-
-    .divider {
-        height: 2.1875rem;
-        /* 35px */
-    }
-
-    .djsectionmenu {
-        font-size: 1.5625rem;
-        /* 25px */
-    }
-
-    .djsection {
-        font-size: 1.75rem;
-        /* 28px */
+    .prc-stripes,
+    .header-title {
+        grid-column: 1 / -1;
     }
 
     .header-title {
-        font-size: 1.125rem;
-        /* 18px */
+        padding: 0.75rem 1rem;
+        margin: 0.5rem 0 0.75rem;
+        text-align: left;
     }
-}
 
-@media screen and (min-width: 48rem) {
-
-    /* 768px */
     .h1 {
-        font-size: 1.625rem;
-        /* 26px */
+        font-size: clamp(1.4rem, 4vw, 1.8rem);
+        margin-top: 0.25rem;
+        margin-bottom: 0.5rem;
     }
 
     .p {
-        font-size: 0.625rem;
-        /* 10px */
-    }
-
-    .mixlink {
-        font-size: 0.875rem;
-        /* 14px */
-    }
-
-    .amixlink {
-        font-size: 0.875rem;
-        /* 14px */
-    }
-
-    .mixsections {
-        font-size: 1rem;
-        /* 16px */
-    }
-
-    .h2 {
-        font-size: 1.5rem;
-        /* 24px */
-    }
-
-    .prclogo {
-        height: 13.75rem;
-        /* 220px */
-    }
-
-    .divider {
-        height: 2.6875rem;
-        /* 43px */
-    }
-
-    .djsectionmenu {
-        font-size: 2.0625rem;
-        /* 33px */
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
     }
 
     .djsection {
-        font-size: 2.0625rem;
-        /* 33px */
+        display: inline-block;
+        width: 100%;
+    }
+
+    .column {
+        width: 100%;
+        float: none;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    content {
+        width: 95%;
+        padding: 1rem 0.5rem;
+    }
+
+    .footer {
+        height: auto;
+        padding: 1.5rem 0;
+    }
+
+    .latest {
+        float: none;
+        width: 100%;
+        clear: both;
+    }
+
+    .imglink {
+        width: 9rem;
+        /* 144px circa */
+    }
+
+    .prclogo {
+        height: 5rem;
+        padding: 0.5rem;
+    }
+
+    .divider {
+        height: 1rem;
+        padding: 0.5rem;
+    }
+
+    .bottomimg img,
+    .linkimg img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* ===========================
+   TABLET (601px – 900px)
+   =========================== */
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-grid {
+        grid-template-columns: auto 1fr;
+        gap: 0.75rem;
     }
 
     .header-title {
-        font-size: 1.625rem;
-        /* 26px */
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .h1 {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+    }
+
+    .column {
+        width: 45%;
+        float: left;
+        padding-left: 2%;
+        padding-right: 2%;
+        margin-bottom: 1.25rem;
+    }
+
+    content {
+        width: 90%;
+        padding: 1.5rem 1rem;
+    }
+
+    .footer {
+        height: auto;
+        padding: 2rem 0;
+    }
+
+    .footerlegal {
+        float: right;
+        margin-top: 2rem;
+    }
+
+    .imglink {
+        width: 11rem;
+        /* 176px circa */
+    }
+}
+
+/* ===========================
+   SMALL DESKTOP (901px – 1200px)
+   =========================== */
+@media (min-width: 901px) and (max-width: 1200px) {
+
+    .container {
+        width: 85%;
+    }
+
+    .header-title {
+        padding-left: 3rem;
+        padding-right: 5rem;
+    }
+
+    .column {
+        width: 22%;
+        padding-left: 1.5%;
+        padding-right: 1.5%;
+    }
+
+    content {
+        width: 90%;
     }
 }
