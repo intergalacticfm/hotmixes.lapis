@@ -85,6 +85,8 @@ body {
     color: inherit;
     padding-left: 5rem;
     padding-right: 10rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .h1 {
@@ -372,7 +374,7 @@ body {
 }
 
 .content {
-    padding-top: 3em;
+    padding: 2em;
     width: min(90%, 100rem);
     /* 1600px */
     margin: 0 auto;
@@ -447,11 +449,6 @@ body {
         /* 18px */
     }
 
-    .header {
-        max-height: 11.25rem;
-        /* 180px */
-    }
-
     .prclogo {
         height: 11.25rem;
         /* 180px */
@@ -509,11 +506,6 @@ body {
     .h2 {
         font-size: 1.5rem;
         /* 24px */
-    }
-
-    .header {
-        max-height: 13.75rem;
-        /* 220px */
     }
 
     .prclogo {
