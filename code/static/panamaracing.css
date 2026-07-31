@@ -126,7 +126,6 @@ body {
     font-weight: 600;
     text-decoration: none;
     background: var(--ifm-deep-black);
-    display: inline-flex;
     margin: 0.125rem 0;
     /* 2px 0 */
     padding: 0.125rem 0.625rem;
@@ -138,11 +137,6 @@ body {
 .amixlink:hover {
     color: #000;
     background: var(--ifm-red);
-}
-
-.body {
-    width: 100%;
-    background-color: var(--ifm-black);
 }
 
 .mixsections {
@@ -230,23 +224,42 @@ content {
 }
 
 .latest {
-    padding: 2em;
-    width: min(90%, 100rem);
+    max-width: 90%;
+    padding-bottom: 1rem;
 }
 
 .linkimg:hover {
     filter: invert(70%);
 }
 
+.image_collage {
+    line-height: 0;
+    -webkit-column-count: 5;
+    -webkit-column-gap: 0px;
+    -moz-column-count: 5;
+    -moz-column-gap: 0px;
+    column-count: 5;
+    column-gap: 0px;
+}
+
+.image_collage img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+img {
+    max-width: 100%;
+}
+
 /* RESPONSIVE CSS FOR DIFFERENT DEVICES */
 
 /* ===========================
-   MOBILE (fino a 600px)
+   MOBILE (till 600px)
    =========================== */
 @media (max-width: 600px) {
 
     .container {
-        width: 95%;
+        width: 90%;
         margin: 0 auto;
     }
 
@@ -276,7 +289,8 @@ content {
         grid-column: 1 / -1;
     }
 
-    .header-title {
+    .header-title,
+    .all_files {
         padding: 0.75rem 1rem;
         margin: 0.5rem 0 0.75rem;
         text-align: left;
@@ -317,6 +331,7 @@ content {
     }
 
     .latest {
+        padding-left: 0.75rem;
         float: none;
         width: 100%;
         clear: both;
@@ -401,6 +416,11 @@ content {
         width: 11rem;
         /* 176px circa */
     }
+
+    .all_files {
+        padding-left: 2rem;
+        padding-bottom: 1em;
+    }
 }
 
 /* ===========================
@@ -415,6 +435,11 @@ content {
     .header-title {
         padding-left: 3rem;
         padding-right: 5rem;
+    }
+
+    .all_files {
+        padding-left: 3rem;
+        padding-bottom: 1em;
     }
 
     .column {
