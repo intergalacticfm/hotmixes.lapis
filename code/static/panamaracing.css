@@ -7,254 +7,232 @@
     --ifm-white: #ffffff;
 }
 
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+}
 
-.h1
-{
-    font-family: Helvetica;
-    font-size: 16px;
+body {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: var(--ifm-black);
     color: var(--ifm-white);
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-    margin-top: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    color: var(--ifm-white);
+}
+
+.container {
+    width: min(80%, 900rem);
+    /* 1600px */
+    margin: 0 auto;
+}
+
+.header-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto 1fr;
+    gap: 0;
+    align-items: center;
+}
+
+.header-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand-logos {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.brand-logos img {
+    flex: 0 0 auto;
+    width: auto;
+    height: auto;
+    max-width: none;
+    display: block;
+}
+
+.prc-stripes,
+.header-title {
+    grid-column: 1 / span 2;
+}
+
+
+.prc-stripes {
+    width: 100%;
+    --square: 0.55rem;
+    /* 10px */
+    height: calc(var(--square) * 3);
+    background:
+        conic-gradient(from 90deg at 50% 50%, #000 0 25%, #fff 0 50%, #000 0 75%, #fff 0) 0 0 / calc(var(--square) * 2) calc(var(--square) * 2);
+}
+
+.header-title {
+    margin: 0.625rem 0 0.9375rem;
+    /* 10px 0 15px */
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(1.2rem, 1.2rem + 0.5vw, 2rem);
+    line-height: 1em;
+    color: inherit;
+    padding-left: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.h1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(1.3rem, 1.3rem + 0.5vw, 2rem);
+    color: var(--ifm-white);
+    padding-top: 0.3125rem;
+    /* 5px */
+    padding-bottom: 0.3125rem;
+    /* 5px */
+    margin-bottom: 0.9375rem;
+    /* 15px */
+    margin-top: 0.625rem;
+    /* 10px */
     line-height: 1em;
 }
 
-.p
-{
-    font-family: Helvetica;
-    font-size: 6px;
-    color: var(--ifm-grey);
-    margin-bottom: 45px;
-}
-
-.href
-{
-    font-family: Helvetica;
+.href {
+    font-family: Helvetica, Arial, sans-serif;
     text-decoration: none;
 }
 
-.mixlink
-{
-    line-height: 16px;
+.mixlink {
+    line-height: 1rem;
+    /* 16px */
     font-weight: 600;
-    font-size: 10px;
-    margin-bottom: 0;
-    margin-top: 0;
-    font-family: Helvetica;
+    font-size: clamp(0.6rem, 0.6rem + 0.2vw, 1rem);
+    /* 10px */
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
-.amixlink
-{
-    font-family: Helvetica;
+.amixlink {
+    font-family: Helvetica, Arial, sans-serif;
     color: var(--ifm-grey);
     line-height: 1.6em;
     font-weight: 600;
-    font-size: 10px;
     text-decoration: none;
     background: var(--ifm-deep-black);
-    display: inline-flex;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    padding: 2px 10px;
-    border-radius: 20px;
+    margin: 0.125rem 0;
+    /* 2px 0 */
+    padding: 0.125rem 0.625rem;
+    /* 2px 10px */
+    border-radius: 1.25rem;
+    /* 20px */
 }
 
-.amixlink:hover
-{
+.amixlink:hover {
     color: #000;
     background: var(--ifm-red);
 }
 
-.body
-{
-    width: 100%;
-    background-color: var(--ifm-black);
-}
-
-.mixsections
-{
-    font-family: Helvetica;
+.mixsections {
+    font-family: Helvetica, Arial, sans-serif;
     font-weight: 900;
-    font-size: 12px;
     color: var(--ifm-grey);
-    padding: 5px;
+    padding: 0.3125rem;
+    /* 5px */
     margin-top: 2%;
-    margin-bottom: 5px;
-    margin-right: 15px;
-    border: solid 3px var(--ifm-grey);
+    margin-bottom: 0.3125rem;
+    /* 5px */
+    margin-right: 0.9375rem;
+    /* 15px */
+    border: solid 0.1875rem var(--ifm-grey);
+    /* 3px */
     text-decoration: none;
 }
 
-.prclogo
-{
-    height: 120px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-top: 10px;
+.prclogo {
+    height: 7.5rem;
+    /* 120px */
+    padding: 0.625rem 0 0.625rem 0.625rem;
+    /* 10px 0 10px 10px */
 }
 
-.divider
-{
-    height: 23px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-top: 10px;
+.divider {
+    height: 1.4375rem;
+    /* 23px */
+    padding: 0.625rem 0 0.625rem 0.625rem;
+    /* 10px 0 10px 10px */
 }
 
-.h2
-{
-    font-family: Helvetica;
-    font-size: 24px;
-    color: var(--ifm-grey);
-    font-weight: 200;
-    border-bottom: 2px solid var(--ifm-grey);
-    margin-bottom: 0px;
-}
-
-.header
-{
+.footer {
     width: 100%;
-    max-height: 120px;
-}
-
-.footer
-{
-    width: 100%;
-    height: 250px;
-    border-top: 2px solid var(--ifm-red);
+    height: 15.625rem;
+    /* 250px */
+    border-top: 0.125rem solid var(--ifm-red);
+    /* 2px */
     float: left;
     clear: both;
 }
 
-.djsectionmenu
-{
-    font-family: Helvetica;
-    font-size: 18px;
-    color: var(--ifm-red);
-    line-height: 1em;
-    z-index: 100;
-    display: block;
-    width: 10%;
-    height: 130px;
-    float: left;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    min-width: 130px;
-}
-
-.djsectionmenu:hover
-{
-    background-color: #e3301a;
-}
-
-.djsection
-{
-    font-family: Helvetica;
-    font-size: 18px;
+.djsection {
+    font-family: Helvetica, Arial, sans-serif;
     text-decoration: inherit;
     color: var(--ifm-red);
+    font-size: clamp(1.3rem, 1rem + 1.5vw, 2rem);
 }
 
-.djsection:hover
-{
+.djsection:hover {
     background-color: #000;
 }
 
-.h2
-{
-    font-family: Helvetica;
-    color: var(--ifm-red);
-    font-size: 16px;
-    padding-top: 5px;
-    border-bottom: 2px solid var(--ifm-red);
-}
-
-.homeheader
-{
+.homeheader {
     background-image: url('/img/header.png');
     background-repeat: no-repeat;
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
+    /* 20px */
 }
 
-.bottomimg
-{
+.bottomimg {}
+
+.imglink {
+    width: 12.5rem;
+    /* 200px */
 }
 
-.imglink
-{
-    width: 200px;
-}
-
-.footerlegal
-{
-    right: 0;
-    float: right;
-    margin-top: 80px;
-}
-
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-
-.column
-{
+.column {
     float: left;
-    margin-left: 0px;
+    margin-left: 0;
     padding-left: 2.5%;
     padding-right: 2.5%;
     width: 15%;
 }
 
-/* Clear floats after image containers */
-
-.row::after
-{
+.row::after {
     content: "";
     clear: both;
     display: table;
 }
 
-@media screen and (max-width: 768px)
-{
-    .column
-    {
-        padding-left: 5%;
-        padding-right: 5%;
-        width: 40%;
-    }
-
-    .footer
-    {
-        margin-top: 15%;
-    }
+content {
+    padding: 2em;
+    width: min(90%, 100rem);
 }
 
-@media screen and (max-width: 500px)
-{
-    .column
-    {
-        padding-left: 0%;
-        padding-right: 5%;
-        width: 45%;
-    }
+.latest {
+    max-width: 90%;
+    padding-bottom: 1rem;
 }
 
-.profileimg
-{
-    overflow: hidden;
-    height: auto;
-    width: 30%;
+.linkimg:hover {
+    filter: invert(70%);
 }
 
-.profilesection
-{
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 2.5%;
-    background-color: var(--ifm-red);
-}
-
-.image_collage
-{
+.image_collage {
     line-height: 0;
     -webkit-column-count: 5;
     -webkit-column-gap: 0px;
@@ -264,205 +242,213 @@
     column-gap: 0px;
 }
 
-.image_collage img
-{
+.image_collage img {
     width: 100% !important;
     height: auto !important;
 }
 
-@media (max-width: 1200px)
-{
-    .image_collage
-    {
-        -moz-column-count: 4;
-        -webkit-column-count: 4;
-        column-count: 4;
+img {
+    max-width: 100%;
+}
+
+/* RESPONSIVE CSS FOR DIFFERENT DEVICES */
+
+/* ===========================
+   MOBILE (till 600px)
+   =========================== */
+@media (max-width: 600px) {
+
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .brand-logos {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+
+    .brand-logos img {
+        max-width: 40%;
+        height: auto;
+    }
+
+    .prc-stripes,
+    .header-title {
+        grid-column: 1 / -1;
+    }
+
+    .header-title,
+    .all_files {
+        padding: 0.75rem 1rem;
+        margin: 0.5rem 0 0.75rem;
+        text-align: left;
+    }
+
+    .h1 {
+        font-size: clamp(1.4rem, 4vw, 1.8rem);
+        margin-top: 0.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .djsection {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .column {
+        width: 100%;
+        float: none;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    content {
+        width: 95%;
+        padding: 1rem 0.5rem;
+    }
+
+    .footer {
+        height: auto;
+        padding: 1.5rem 0;
+    }
+
+    .latest {
+        padding-left: 0.75rem;
+        float: none;
+        width: 100%;
+        clear: both;
+    }
+
+    .imglink {
+        width: 9rem;
+        /* 144px circa */
+    }
+
+    .prclogo {
+        height: 5rem;
+        padding: 0.5rem;
+    }
+
+    .divider {
+        height: 1rem;
+        padding: 0.5rem;
+    }
+
+    .bottomimg img,
+    .linkimg img {
+        max-width: 100%;
+        height: auto;
     }
 }
 
-@media (max-width: 1000px)
-{
-    .image_collage
-    {
-        -moz-column-count: 3;
-        -webkit-column-count: 3;
-        column-count: 3;
+/* ===========================
+   TABLET (601px – 900px)
+   =========================== */
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-grid {
+        grid-template-columns: auto 1fr;
+        gap: 0.75rem;
+    }
+
+    .header-title {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .h1 {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+    }
+
+    .column {
+        width: 45%;
+        float: left;
+        padding-left: 2%;
+        padding-right: 2%;
+        margin-bottom: 1.25rem;
+    }
+
+    content {
+        width: 90%;
+        padding: 1.5rem 1rem;
+    }
+
+    .footer {
+        height: auto;
+        padding: 2rem 0;
+    }
+
+    .footerlegal {
+        float: right;
+        margin-top: 2rem;
+    }
+
+    .imglink {
+        width: 11rem;
+        /* 176px circa */
+    }
+
+    .all_files {
+        padding-left: 2rem;
+        padding-bottom: 1em;
     }
 }
 
-@media (max-width: 800px)
-{
-    .image_collage
-    {
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
-    }
-}
+/* ===========================
+   SMALL DESKTOP (901px – 1200px)
+   =========================== */
+@media (min-width: 901px) and (max-width: 1200px) {
 
-@media (max-width: 400px)
-{
-    .image_collage
-    {
-        -moz-column-count: 1;
-        -webkit-column-count: 1;
-        column-count: 1;
-    }
-}
-
-.content
-{
-    width: 80%;
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
-.latest
-{
-    position: relative;
-    clear: both;
-}
-
-.latestdiv
-{
-    width: 100%;
-    position: relative;
-    clear: both;
-    float: left;
-}
-
-.sponsors
-{
-    margin-top: 20px;
-    clear: both;
-    float: left;
-}
-
-.linkimg:hover
-{
-    filter: invert(70%);
-}
-
-@media (max-width:499px)
-{
-    .djsectionmenu500
-    {
-        height: 70px;
-        overflow: hidden;
-        min-width: 60px;
-        width: 50%;
-    }
-}
-
-@media screen and (min-width: 600px) {
-
-    .h1{
-        font-size: 18px;
+    .container {
+        width: 85%;
     }
 
-    .p
-    {
-        font-size: 8px;
+    .header-title {
+        padding-left: 3rem;
+        padding-right: 5rem;
     }
 
-    .mixlink
-    {
-        font-size: 12px;
+    .all_files {
+        padding-left: 3rem;
+        padding-bottom: 1em;
     }
 
-    .amixlink
-    {
-        font-size: 12px;
+    .column {
+        width: 22%;
+        padding-left: 1.5%;
+        padding-right: 1.5%;
     }
 
-    .mixsections
-    {
-        font-size: 14px;
-    }
-
-    .h2
-    {
-        font-size: 18px;
-    }
-
-    .header
-    {
-        max-height: 180px;
-    }
-
-    .prclogo
-    {
-        height: 180px;
-    }
-
-    .divider
-    {
-        height: 35px;
-    }
-
-    .djsectionmenu
-    {
-        font-size: 25px;
-    }
-
-    .djsection
-    {
-        font-size: 28px;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .h1{
-        font-size: 26px;
-    }
-
-    .p
-    {
-        font-size: 10px;
-    }
-
-    .mixlink
-    {
-        font-size: 14px;
-    }
-
-    .amixlink
-    {
-        font-size: 14px;
-    }
-
-    .mixsections
-    {
-        font-size: 16px;
-    }
-
-    .h2
-    {
-        font-size: 24px;
-    }
-
-    .header
-    {
-        max-height: 220px;
-    }
-
-    .prclogo
-    {
-        height: 220px;
-    }
-
-    .divider
-    {
-        height: 43px;
-    }
-
-    .djsectionmenu
-    {
-        font-size: 33px;
-    }
-
-    .djsection
-    {
-        font-size: 33px;
+    content {
+        width: 90%;
     }
 }

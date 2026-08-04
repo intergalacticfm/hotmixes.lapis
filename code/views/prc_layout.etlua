@@ -12,33 +12,48 @@
   <link rel="stylesheet" href="/static/<%= titles.css %>">
 </head>
     <body class="body">
-    <header class="header">
-      <a href="/"><img src="/static/<%= titles['header'] %>" alt="prc logo" class="prclogo"/></a>
-    </header>
-    <div class="content">
-        <h1 class="h1">Tons Of Mix - Downloads & Streams (right click + Save link as... for downloads)<br>
-            <%= titles.name %><br>
-            Sharing <%= total[0] %> files
-        </h1>
-    </div>
-        <img class="divider" src="/static/panamaracing.club_divider.png">
-    <div class="content">
-        <% content_for("inner") %>
-    </div>
-        <img class="divider" src="/static/panamaracing.club_divider.png">
-    <div class="content">
-        <section class="latest">
-            <div class="latest_files">
-                <h1 class="h1">Latest uploads:</h1>
-            <% for i, file in ipairs(latestpath) do %>
-                <a class="amixlink" href="<%= '/data/' .. titles.url .. '/' .. file:gsub("#", "%%23") %>">
-                    <span class="mixlink"><%= latestname[i] %></span>
+        <div class="container">
+        <header class="header">
+            <div class="header-grid">
+                <a href="/" class="header-link">
+                    <div class="brand-logos">
+                        <img src="/static/PRC-Car.png" alt="Panama Racing Club car">
+                        <img src="/static/PRC-Text.png" alt="Panama Racing Club">
+                    </div>
                 </a>
-                </br>
-            <% end %>
+
+                <div class="prc-stripes" aria-hidden="true"></div>
+
+                <h1 class="header-title">
+                    Tons Of Mix - Downloads & Streams (right click + Save link as... for downloads)<br>
+                    <%= titles.name %><br>
+                    Sharing <%= total[0] %> files
+                </h1>
+
+                <div class="prc-stripes" aria-hidden="true"></div>
             </div>
-        </section>
+        </header>
+
+        <br>
+        <div class="content">
+            <% content_for("inner") %>
+        </div>
+        <div class="prc-stripes" aria-hidden="true"></div>
+        <div class="content">
+            <section class="latest">
+                <div class="latest_files">
+                    <h1 class="h1">Latest uploads:</h1>
+                <% for i, file in ipairs(latestpath) do %>
+                    <a class="amixlink" href="<%= '/data/' .. titles.url .. '/' .. file:gsub("#", "%%23") %>">
+                        <span class="mixlink"><%= latestname[i] %></span>
+                    </a>
+                    </br>
+                <% end %>
+                </div>
+            </section>
+        </div>
+        <br>
+        <div class="prc-stripes" aria-hidden="true"></div>
     </div>
-        <img class="divider" src="/static/panamaracing.club_divider.png">
     </body>
 </html>
