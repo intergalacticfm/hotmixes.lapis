@@ -316,6 +316,8 @@
 {
     position: relative;
     clear: both;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--ifm-red);
 }
 
 .latestdiv
