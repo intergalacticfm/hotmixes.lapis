@@ -25,9 +25,9 @@ local data_path = data_dir .. request_path
 -- setup
 
 local type_image = { jpg=true, jpeg=true, png=true, gif=true }
-local type_media = { mp3=true, flac=true, wav=true, mp4=true }
+local type_media = { mp3=true, flac=true, wav=true, mp4=true, mkv=true }
 local type_audio = { mp3=true, flac=true, wav=true }
-local type_allowed = { jpg=true, jpeg=true, png=true, gif=true, mp3=true, flac=true, wav=true, mp4=true }
+local type_allowed = { jpg=true, jpeg=true, png=true, gif=true, mp3=true, flac=true, wav=true, mp4=true, mkv=true }
 
 local utils =  {}
 
@@ -63,7 +63,7 @@ end
 
 utils['latest_audio'] = function( directory )
     local i, t, popen = 0, {}, io.popen
-    local pfile = popen('find -L "'..directory..'" -type f ! -name \'*.filepart\' ! -name \'*.mp4\' ! -name \'*.png\' ! -name \'*.jpg\' ! -name \'*.jpeg\' ! -name \'*.gif\' -printf \'%C@ %p\n\'| sort -nr | head -7 | cut -f2- -d" "| sed s:"'..directory..'/"::')
+    local pfile = popen('find -L "'..directory..'" -type f ! -name \'*.filepart\' ! -name \'*.mp4\' ! -name \'*.mkv\' ! -name \'*.png\' ! -name \'*.jpg\' ! -name \'*.jpeg\' ! -name \'*.gif\' -printf \'%C@ %p\n\'| sort -nr | head -7 | cut -f2- -d" "| sed s:"'..directory..'/"::')
     for filename in pfile:lines() do
         if  utils.match_ext ( filename, type_audio ) then
             i = i + 1
