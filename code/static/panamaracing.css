@@ -228,6 +228,31 @@ content {
     padding-bottom: 1rem;
 }
 
+.latest-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    font-size: clamp(1.3rem, 1.3rem + 0.5vw, 2rem);  /* matches .h1 */
+    padding: 0.3125rem 0;
+    margin-bottom: 0.9375rem;
+}
+
+.latest-head .h1 {
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 0;
+}
+
+.rss { display: inline-flex; flex: 0 0 auto; line-height: 0; }
+.rss:hover, .rss:focus-visible { opacity: 0.75; }
+
+.rss-icon {
+    width: 0.8em;      /* scales with the heading */
+    height: 0.8em;
+    display: block;
+}
+
 .linkimg:hover {
     filter: invert(70%);
 }

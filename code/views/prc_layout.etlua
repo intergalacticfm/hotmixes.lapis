@@ -47,7 +47,12 @@
         <div class="content">
             <section class="latest">
                 <div class="latest_files">
+                    <div class="latest-head">
                     <h1 class="h1">Latest uploads:</h1>
+                    <a class="rss" href="/latest.rss" title="Latest uploads RSS feed" aria-label="Latest uploads RSS feed">
+                        <img class="rss-icon" src="/static/rss.png" alt="" width="512" height="512">
+                    </a>
+                    </div>
                 <% for i, file in ipairs(latestpath) do %>
                     <a class="amixlink" href="<%= '/data/' .. titles.path .. '/' .. file:gsub("#", "%%23") %>">
                         <span class="mixlink"><%= latestname[i] %></span>
