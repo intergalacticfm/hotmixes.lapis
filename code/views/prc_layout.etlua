@@ -12,6 +12,7 @@
   <meta property="og:title" content="<%= titles.name %>"/>
   <meta property="og:url" content="https://<%= titles.url .. ngx.var.request_uri %>"/>
   <meta property="og:image" content="https://<%= titles.url .. "/static/" .. titles.header %>"/>
+  <meta property="og:description" content="<%= titles.name %>"/>
   <link rel="stylesheet" href="/static/<%= titles.css %>">
 </head>
     <body class="body">

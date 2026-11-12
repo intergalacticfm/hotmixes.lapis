@@ -6,11 +6,11 @@ local hotmixes = autoload("hotmixes")
 
 local function Latesthandler(self)
 
-    local path = config.get().mount .. self.titles.url
+    local path = config.get().mount .. self.titles.path
     local latest_path, latest_name = hotmixes.utils.these_latest( path )
 
     local host = self.req.parsed_url.scheme .. '://' .. self.req.parsed_url.host
-    local data_path = host .. '/data/' .. self.titles.url .. '/'
+    local data_path = host .. '/data/' .. self.titles.path .. '/'
     local latest_json = {}
     latest_json["files"] = {}
 
