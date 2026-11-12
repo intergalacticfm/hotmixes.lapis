@@ -42,6 +42,7 @@
         <div class="content">
             <% content_for("inner") %>
         </div>
+        <br>
         <div class="prc-stripes" aria-hidden="true"></div>
         <div class="content">
             <section class="latest">
