@@ -47,7 +47,7 @@ end
 
 utils['latest_files'] = function( directory )
     local i, t, popen = 0, {}, io.popen
-    local pfile = popen('find -L "'..directory..'" -type f ! -name \'*.filepart\' ! -name \'*.png\' ! -name \'*.jpg\' ! -name \'*.jpeg\' ! -name \'*.gif\' -printf \'%C@ %p\n\'| sort -nr | head -7 | cut -f2- -d" "| sed s:"'..directory..'/"::')
+    local pfile = popen('find -L "'..directory..'" -type f ! -name \'*.filepart\' ! -name \'*.png\' ! -name \'*.jpg\' ! -name \'*.jpeg\' ! -name \'*.gif\' -printf \'%T@ %p\n\'| sort -nr | head -7 | cut -f2- -d" "| sed s:"'..directory..'/"::')
     for filename in pfile:lines() do
         if  utils.match_ext ( filename, type_allowed ) then
             i = i + 1
@@ -60,7 +60,7 @@ end
 
 utils['latest_audio'] = function( directory )
     local i, t, popen = 0, {}, io.popen
-    local pfile = popen('find -L "'..directory..'" -type f ! -name \'*.filepart\' ! -name \'*.mp4\' ! -name \'*.mkv\' ! -name \'*.png\' ! -name \'*.jpg\' ! -name \'*.jpeg\' ! -name \'*.gif\' -printf \'%C@ %p\n\'| sort -nr | head -7 | cut -f2- -d" "| sed s:"'..directory..'/"::')
+    local pfile = popen('find -L "'..directory..'" -type f ! -name \'*.filepart\' ! -name \'*.mp4\' ! -name \'*.mkv\' ! -name \'*.png\' ! -name \'*.jpg\' ! -name \'*.jpeg\' ! -name \'*.gif\' -printf \'%T@ %p\n\'| sort -nr | head -7 | cut -f2- -d" "| sed s:"'..directory..'/"::')
     for filename in pfile:lines() do
         if  utils.match_ext ( filename, type_audio ) then
             i = i + 1
