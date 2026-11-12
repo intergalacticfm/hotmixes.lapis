@@ -3,39 +3,36 @@ local config = require("lapis.config").get()
 local escape = require("lapis.util").escape
 
 
--- setup
-local request_uri = ngx.var.request_uri
-request_uri = ngx.unescape_uri(request_uri)
-ngx.log(ngx.ERR, request_uri)
+local function current_request_path()
+    -- request_uri includes "?args"; we don't support query params, so drop them
+    local request_uri = ngx.var.request_uri:match("^[^?]*") or "/"
+    request_uri = ngx.unescape_uri(request_uri)
+    ngx.log(ngx.ERR, request_uri)
 
-if string.find(request_uri, "\"") or string.find(request_uri, "%`") or string.find(request_uri, "%$") then
-    ngx.log(ngx.ERR, "Illegal request_uri")
-    ngx.exit(500)
+    if request_uri:find("\"") or request_uri:find("%`") or request_uri:find("%$") then
+        ngx.log(ngx.ERR, "Illegal request_uri")
+        ngx.exit(500)
+    end
+
+    return request_uri == "/" and "/" or request_uri .. "/"
 end
 
-local request_path
-if request_uri ~= '/' then
-    request_path = request_uri  .. '/'
-else
-    request_path = request_uri
-end
+local utils =  {}
+utils['request_path'] = current_request_path
 
 local data_dir = config.mount
-local data_path = data_dir .. request_path
--- setup
+local data_path = data_dir .. current_request_path()
 
 local type_image = { jpg=true, jpeg=true, png=true, gif=true }
 local type_media = { mp3=true, flac=true, wav=true, mp4=true, mkv=true }
 local type_audio = { mp3=true, flac=true, wav=true }
 local type_allowed = { jpg=true, jpeg=true, png=true, gif=true, mp3=true, flac=true, wav=true, mp4=true, mkv=true }
 
-local utils =  {}
 
 local function hotesc ( str )
     return escape(str):gsub("%%2f", "/"):gsub("%%2d", "-"):gsub("%%2e", ".")
 end
 
-utils['request_path'] = request_path
 utils['data_path'] = data_path
 
 -- we want to know if something is an image
