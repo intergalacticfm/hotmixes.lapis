@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
   <title><%= titles['name'] %>
   <% if title then %>
     - <%= title %>
   <% end %>
   </title>
-   <link rel="icon" type="image/x-icon" href="/static/<%= titles['url'] %>.ico">
+   <link rel="icon" type="image/x-icon" href="/static/<%= titles['path'] %>.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="<%= titles.name %>"/>
+  <meta property="og:url" content="https://<%= titles.url .. ngx.var.request_uri %>"/>
+  <meta property="og:image" content="https://<%= titles.url .. "/static/" .. titles.header %>"/>
 <% if titles.css ~= nil then %>
   <link rel="stylesheet" href="/static/<%= titles.css %>">
 <% else %>
@@ -31,7 +34,7 @@
                 <br>
                 <h1 class="h1">Latest uploads:</h1>
             <% for i, file in ipairs(latestpath) do %>
-                <a class="amixlink" href="<%= '/data/' .. titles.url .. '/' .. file %>">
+                <a class="amixlink" href="<%= '/data/' .. titles.path .. '/' .. file %>">
                     <span class="mixlink"><%= latestname[i] %></span>
                 </a>
                 </br>
