@@ -1,13 +1,12 @@
 local lapis = require("lapis")
-local config = require("lapis.config").get()
-local json_params = require("lapis.application").json_params
 
 local app = lapis.Application()
 app:enable("etlua")
 app.layout = require "views.layout"
 
-local autoload = require("lapis.util").autoload
-local handlers = autoload("handlers")
+local Roothandler = require("handlers.roothandler")
+local Latesthandler = require("handlers.latesthandler")
+local RSShandler = require("handlers.RSShandler")
 
 local page_titles = {}
 
@@ -57,22 +56,22 @@ end
 
 app:get("/", function(self)
     self.titles = page_titles
-    return handlers.Roothandler(self)
+    return Roothandler(self)
 end)
 
 app:get("/latest.json", function(self)
     self.titles = page_titles
-    return handlers.Latesthandler(self)
+    return Latesthandler(self)
 end)
 
 app:get("/latest.rss", function(self)
     self.titles = page_titles
-    return handlers.RSShandler(self)
+    return RSShandler(self)
 end)
 
 app:get("/*", function(self)
     self.titles = page_titles
-    return handlers.Roothandler(self)
+    return Roothandler(self)
 end)
 
 

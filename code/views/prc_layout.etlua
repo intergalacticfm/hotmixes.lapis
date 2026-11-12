@@ -9,7 +9,7 @@
    <link rel="icon" type="image/x-icon" href="/static/<%= titles['path'] %>.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="<%= titles.name %>"/>
+  <meta property="og:title" content="<%= titles.name %> - Tons Of Mix"/>
   <meta property="og:url" content="https://<%= titles.url .. ngx.var.request_uri %>"/>
   <meta property="og:image" content="https://<%= titles.url .. "/static/" .. titles.header %>"/>
   <meta property="og:description" content="<%= titles.name %> - Tons Of Mix - Downloads & Streams"/>

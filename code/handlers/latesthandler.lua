@@ -1,13 +1,10 @@
-local to_json = require("lapis.util").to_json
-local escape = require("lapis.util").escape
-local autoload = require("lapis.util").autoload
 local config = require("lapis.config")
-local hotmixes = autoload("hotmixes")
+local utils = require("hotmixes.utils")
 
 local function Latesthandler(self)
 
     local path = config.get().mount .. self.titles.path
-    local latest_path, latest_name = hotmixes.utils.these_latest( path )
+    local latest_path, latest_name = utils.these_latest( path )
 
     local host = self.req.parsed_url.scheme .. '://' .. self.req.parsed_url.host
     local data_path = host .. '/data/' .. self.titles.path .. '/'
