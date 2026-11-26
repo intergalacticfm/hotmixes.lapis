@@ -4,7 +4,7 @@ local prc_layout = require("views.prc_layout")
 
 local function Roothandler(self)
 
-    local request_path = utils.request_path()
+    local request_path, json = utils.json_request( utils.request_path() )
     local path = config.get().mount .. self.titles.path
     local stuff = utils.these_files( path .. request_path )
     local latest_path, latest_name = utils.these_latest( path )
@@ -19,6 +19,15 @@ local function Roothandler(self)
     self.latestpath = latest_path
     self.latestname = latest_name
     self.functions = { hotesc = utils.hotesc }
+
+    if json then
+        return { json = {
+            path = self.path,
+            dirs = self.dirs,
+            images = self.images,
+            files = self.files
+        } }
+    end
 
     if self.titles['url'] == "panamaracing.club" then
         return { render = "root", layout = prc_layout }

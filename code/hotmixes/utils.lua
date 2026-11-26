@@ -20,6 +20,18 @@ end
 local utils =  {}
 utils['request_path'] = current_request_path
 
+utils['json_request'] = function( request_path )
+    local stripped = request_path:match("^(.*)%.json/?$")
+    if not stripped then
+        return request_path, false
+    end
+    stripped = stripped:gsub("/+$", "")
+    if stripped == "" then
+        return "/", true
+    end
+    return stripped .. "/", true
+end
+
 local data_dir = config.mount
 local data_path = data_dir .. current_request_path()
 
